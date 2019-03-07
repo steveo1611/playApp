@@ -3,6 +3,7 @@
 //  Assignment 2
 // add elements in array - create an array of interger and add few user inputs.
 using System;
+using System.Collections.Generic;
 
 namespace playApp
 {
@@ -10,10 +11,10 @@ namespace playApp
     {
         static void Main(string[] args)
         {
-            /*  Assignment #1 - the value of 'n'
+            //  Assignment #1 - the value of 'n'
                         string inputString = "";
                         string outputString = "";
-
+            /*
                         Console.WriteLine("Hello, Please enter something: or type 'exit' to end program");
                         inputString = Console.ReadLine();
                         while (inputString.ToLower() != "exit")
@@ -31,12 +32,36 @@ namespace playApp
                         Console.ReadLine();
              */
             /*  Assignment #2 - Array of integer  */
-            int[] arr = new int[1];
+            //  Request user to enter an integer
+            Console.WriteLine(@"Hello, Please enter an integer and then the enter key.  
+                                 When finished adding intergers please enter 'done'");
+            inputString = Console.ReadLine();
             
-            // see examples in tutorialspoint for apps and loops
-            for (int i = 0; i < arr.length; i++)
+            //  instantiating a list instead of an array because unsure of length.  Can convert to Array if needed
+            List<int> arrList = new List<int>();
+            
+            //  set to lowercase and check if user entered exit to end entry.  If so then end and display array contents
+            while (inputString.ToLower() != "done")
             {
-                Console.WriteLine("contents: {0}", i);
+                if (inputString == "")
+                {
+                    Console.WriteLine("Uh nothing is NOT an Integer");
+                }
+                else
+                {
+
+                    int.TryParse(inputString, out int numStr);
+                    arrList.Add(numStr);
+                    Console.WriteLine("Please enter another integer or type 'done' to finish array element input");
+                    inputString = Console.ReadLine();
+                }
+            }
+
+
+            // for loop to view the contents of the list or array if converted. NOTE need to change the Count to Length also 
+            for (int i = 0; i < arrList.Count; i++)
+            {
+                Console.WriteLine("contents: {0}", arrList[i]);
             }
             Console.ReadLine();
         }
