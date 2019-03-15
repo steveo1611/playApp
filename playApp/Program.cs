@@ -14,6 +14,7 @@ namespace playApp
             //  Assignment #1 - the value of 'n'
                         string inputString = "";
                         string outputString = "";
+            //  section #1   ##################################################################################
             /*
                         Console.WriteLine("Hello, Please enter something: or type 'exit' to end program");
                         inputString = Console.ReadLine();
@@ -31,8 +32,12 @@ namespace playApp
                         Console.WriteLine("Goodbye!!!");
                         Console.ReadLine();
              */
+             //########################################################################
+            
             /*  Assignment #2 - Array of integer  */
             //  Request user to enter an integer
+            // Section #2 #############################################################
+       // /*
             Console.WriteLine(@"Hello, Please enter an integer and then the enter key.  
                                  When finished adding intergers please enter 'done'");
             inputString = Console.ReadLine();
@@ -64,6 +69,9 @@ namespace playApp
                 Console.WriteLine("contents: {0}", arrList[i]);
             }
             Console.ReadLine();
+      //      */
+//  End of section #2 #########################################
+
         }
     }
 }
